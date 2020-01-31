@@ -45,10 +45,11 @@ podTemplate(label: label,
 	   container('docker') {
 		  docker.withRegistry("", "${dockerHub}") {		    
 
-    		sh "cd hotdeals-event-management && docker build -t ${image}:${tag} . && pwd"
-    	
-    		sh "cd hotdeals-event-management && docker push ${image}:${tag}"
-    		/*  sh "cd hotdeals-event-management && docker push ${image}:latest"  */
+    		sh "cd hotdeals-event-management && docker build -t ${image}:${tag} ."
+    		sh "docker tag ${image}:${tag} ${image}:latest && docker images"
+
+    		sh "docker push ${image}:${tag}"
+    		sh "docker push ${image}:latest"
 		  }
 	    }
 	  }
