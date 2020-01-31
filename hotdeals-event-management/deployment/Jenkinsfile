@@ -44,7 +44,8 @@ podTemplate(label: label,
 	  stage('Build Docker image') {
 	   container('docker') {
 		  docker.withRegistry("", "${dockerHub}") {
-    		sh "docker build . -t ${image}:${tag} -f hotdeals-event-management/Dockerfile"
+		    sh "cd hotdeals-event-management"
+    		sh "docker build -t ${image}:${tag} ."
     	
     		sh "docker push ${image}:${tag}"
     		sh "docker push ${image}:latest"
