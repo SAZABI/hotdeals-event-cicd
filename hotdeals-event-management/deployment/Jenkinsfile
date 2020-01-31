@@ -1,4 +1,4 @@
-def label = "sumapp-${UUID.randomUUID().toString()}"
+def label = "hotdeals-event-management-${UUID.randomUUID().toString()}"
 
 podTemplate(label: label,
 	containers: [
@@ -11,7 +11,7 @@ podTemplate(label: label,
 
 	node(label) {
  	  stage('Get Source') {
- 		git branch: 'master', credentialsId: '', url: 'http://169.56.115.157:30013/wonkeun/crm-ci.git'
+ 		git branch: 'master', credentialsId: '', url: 'https://github.com/SAZABI/hotdeals-event-cicd.git'
  	  }
 
 	  def props = readProperties  file:'deployment/pipeline.properties'

@@ -7,8 +7,8 @@ FROM openjdk:8-jdk
 
 ARG TINI_DOWNLOAD_URL="https://github.com/krallin/tini/releases/download/v0.18.0/tini-static-amd64"
 
-ARG JAR_PATH
-ARG JAR_FILE
+ARG JAR_PATH "hotdeals-event-management/target"
+ARG JAR_FILE "ROOT.jar"
 
 RUN set -eux                                                \
     && cd /etc && rm -rf ./localtime                        \
