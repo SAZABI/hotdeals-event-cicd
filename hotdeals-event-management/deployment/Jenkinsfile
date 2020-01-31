@@ -14,7 +14,7 @@ podTemplate(label: label,
  		git branch: 'master', credentialsId: '', url: 'https://github.com/SAZABI/hotdeals-event-cicd.git'
  	  }
 
-	  def props = readProperties  file:'deployment/pipeline.properties'
+	  def props = readProperties  file:'hotdeals-event-management/deployment/pipeline.properties'
 	  def tag = props['version']
 	  def gitSrc = props['gitSrc']
 	  def dockerRegistry = props['dockerRegistry']
