@@ -48,7 +48,7 @@ podTemplate(label: label,
     		sh "cd hotdeals-event-management && docker build -t ${image}:${tag} . && pwd"
     	
     		sh "cd hotdeals-event-management && docker push ${image}:${tag}"
-    		sh "cd hotdeals-event-management && docker push ${image}:latest"
+    		/*  sh "cd hotdeals-event-management && docker push ${image}:latest"  */
 		  }
 	    }
 	  }
